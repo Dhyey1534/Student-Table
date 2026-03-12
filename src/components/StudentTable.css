@@ -120,3 +120,75 @@ tbody td {
 .empty-state p {
   font-size: 0.95rem;
 }
+
+/* ─── MOBILE: card layout ─────────────────────────────── */
+@media (max-width: 640px) {
+  .table-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .btn-export {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hide normal table header */
+  thead {
+    display: none;
+  }
+
+  /* Each row becomes a card */
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(58, 12, 163, 0.15);
+    border-radius: 12px;
+    margin: 10px 12px;
+    padding: 12px 14px;
+    background: #fafafa;
+    border-top: none;
+  }
+
+  tbody tr:hover {
+    background: #f3f4ff;
+  }
+
+  /* Each cell: show a label before the value */
+  tbody td {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.88rem;
+    border: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #8b5cf6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-width: 60px;
+    flex-shrink: 0;
+  }
+
+  /* Row index: hide the label for # */
+  .row-index {
+    width: auto;
+    font-size: 0.75rem;
+    color: #a0aec0;
+  }
+
+  .action-buttons {
+    justify-content: flex-start;
+    margin-top: 4px;
+  }
+
+  .empty-state {
+    padding: 40px 16px;
+  }
+}

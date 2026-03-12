@@ -55,15 +55,15 @@ const StudentTable = ({ students, onEdit, onDelete }) => {
                         <tbody>
                             {students.map((student, index) => (
                                 <tr key={student.id}>
-                                <td className="row-index">{index + 1}</td>
-                                <td>
+                                <td className="row-index" data-label="#">{index + 1}</td>
+                                <td data-label="Name">
                                     <div className="student-name-cell">
                                         <span>{student.name}</span>
                                     </div>
                                 </td>
-                                <td className="email-cell">{student.email}</td>
-                                <td><span className="age-badge">{student.age}</span></td>
-                                <td>
+                                <td className="email-cell" data-label="Email">{student.email}</td>
+                                <td data-label="Age"><span className="age-badge">{student.age}</span></td>
+                                <td data-label="Actions">
                                     <div className="action-buttons">
                                     <button className="btn btn-edit" onClick={() => onEdit(student)}> Edit</button>
                                     <button className="btn btn-delete" onClick={() => onDelete(student)}>Delete</button>

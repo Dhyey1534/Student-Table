@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
+  padding: 16px;
 }
 
 .form-modal {
@@ -112,3 +113,26 @@
   justify-content: flex-end;
   margin-top: 28px;
 }
+
+/* ─── MOBILE ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .form-modal {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .form-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
