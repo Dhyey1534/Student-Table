@@ -1,0 +1,114 @@
+.form-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.form-modal {
+  background: #0d0d0d;
+  border: 1px solid rgba(58, 12, 163, 0.3);
+  border-radius: 20px;
+  padding: 36px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.form-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.form-close-btn {
+  background: rgba(255, 255, 255, 0.07);
+  border: none;
+  color: #eef5ff;
+  width: 32px;
+  height: 32px;
+  padding: 20px 40px;
+  border-radius: 10%;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-close-btn:hover {
+  background: rgba(229, 62, 62, 0.2);
+  color: #fc8181;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+}
+
+.form-group input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(58, 12, 163, 0.3);
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-group input::placeholder {
+  color: #4a5568;
+}
+
+.form-group input:focus {
+  border-color: #3A0CA3;
+  box-shadow: 0 0 0 3px rgba(58, 12, 163, 0.2);
+}
+
+.form-group input.input-error {
+  border-color: #fc8181;
+  box-shadow: 0 0 0 3px rgba(252, 129, 129, 0.1);
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  color: #fc8181;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.error-msg::before {
+  content: '✗';
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 28px;
+}

@@ -1,0 +1,122 @@
+.table-wrapper {
+  background: #ffffff;
+  border: 1px solid rgba(58, 12, 163, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(58, 12, 163, 0.12);
+}
+
+.table-count {
+  font-size: 0.85rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead tr {
+  background: #f3f4f6;
+}
+
+thead th {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+tbody td {
+  padding: 14px 18px;
+  color: #171718;
+  vertical-align: middle;
+}
+
+.row-index {
+  color: #4a5568;
+  font-size: 0.8rem;
+  font-weight: 600;
+  width: 40px;
+}
+
+.student-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3A0CA3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  flex-shrink: 0;
+}
+
+.email-cell {
+  color: #718096;
+  font-size: 0.87rem;
+}
+
+.age-badge {
+  background: #e5e7eb;
+  color: #8b5cf6;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #4a5568;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.empty-state p {
+  font-size: 0.95rem;
+}
