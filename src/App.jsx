@@ -9,14 +9,15 @@ import './App.css';
 let nextId = studentsData.length + 1;
 
 function App() {
+
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [editStudent, setEditStudent] = useState(null);
   const [deleteTarget, setDeleteTarget] = useState(null);
-  const [toast, setToast] = useState(null);
 
+  // Load the student data after 1.5 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setStudents(studentsData);
@@ -25,6 +26,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Filter the students based on search field
   const filteredStudents = useMemo(() => {
     const q = search.toLowerCase();
     return students.filter(
@@ -32,35 +34,40 @@ function App() {
     );
   }, [students, search]);
 
-    const handleAddStudent = (data) => {
+// function for adding student details
+  const handleAddStudent = (data) => {
     setStudents((prev) => [...prev, { id: nextId++, ...data }]);
     setShowForm(false);
-    showToast('Student added successfully!');
   };
 
+// Function for editing student details
   const handleEditStudent = (data) => {
     setStudents((prev) => prev.map((s) => (s.id === editStudent.id ? { ...s, ...data } : s)));
     setEditStudent(null);
     setShowForm(false);
-    showToast('Student updated successfully!');
   };
 
-const handleDeleteConfirm = () => {
+
+  // Confirmation of delete action
+  const handleDeleteConfirm = () => {
     setStudents((prev) => prev.filter((s) => s.id !== deleteTarget.id));
-    showToast(`${deleteTarget.name} has been removed.`, 'danger');
     setDeleteTarget(null);
   };
 
+
+  // edit student dailog box open when click on edit button in action column of student table.
   const openEdit = (student) => {
     setEditStudent(student);
     setShowForm(true);
   };
 
+  // Add student dailog box open when click on add student button.
   const openAdd = () => {
     setEditStudent(null);
     setShowForm(true);
   };
 
+  // Function when form is submmited for both add and edit student details.
   const handleFormSubmit = (data) => {
     if (editStudent) handleEditStudent(data);
     else handleAddStudent(data);

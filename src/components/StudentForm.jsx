@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import './StudentForm.css'
 
+
+// Form to add or edit student details.
 const emptyForm = { name: '', email: '', age: '' };
 
 const StudentForm = ({ onSubmit, onCancel,editData}) => {
     const [form, setForm] = useState(emptyForm)
     const [errors, setErrors] = useState({})
 
+    // It checks if we edited data or added data and according to set the value.
     useEffect(() => {
         if (editData) {
             setForm({ name: editData.name, email: editData.email, age: String(editData.age) });
@@ -16,6 +19,7 @@ const StudentForm = ({ onSubmit, onCancel,editData}) => {
         setErrors({});
     }, [editData]);
 
+    // Validate the form details of Student
     const validate = () => {
         const newErrors = {};
         if (!form.name.trim()) newErrors.name = 'Name is required.';
@@ -36,12 +40,14 @@ const StudentForm = ({ onSubmit, onCancel,editData}) => {
         return newErrors;
     };
 
+    // if any changes in form then it will set the value.
     const handleChange = (e) => {
         const { name, value } = e.target;
         setForm((prev) => ({ ...prev, [name]: value }));
         if (errors[name]) setErrors((prev) => ({ ...prev, [name]: '' }));
     };
 
+    // On the submission of google form.
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = validate();

@@ -1,5 +1,7 @@
 import './ConfirmDialog.css';
 
+
+// Dialog box to confirm Delete action or to cancel it.
 function ConfirmDialog({ message, onConfirm, onCancel }) {
   return (
     <div className='dialog-backdrop'>

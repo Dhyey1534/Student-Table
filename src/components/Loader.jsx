@@ -1,5 +1,6 @@
 import './Loader.css';
 
+// Loading student in the starting
 const Loader = () => {
     return (
         <div className="loader-overlay">

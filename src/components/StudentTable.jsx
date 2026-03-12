@@ -2,6 +2,7 @@ import ExcelJS from 'exceljs';
 import './StudentTable.css'
 
 const StudentTable = ({ students, onEdit, onDelete }) => {
+    // this function is to export Excel file of filtered students.
     const handleExport = async () => {
         const workbook = new ExcelJS.Workbook();
         const worksheet = workbook.addWorksheet("Students");
